@@ -88,7 +88,7 @@ jobs:
         run: |
           cd target/${{ matrix.platform.target }}/release/
           Get-ChildItem -Filter "*.${{ matrix.platform.ext }}" | ForEach-Object {
-            $newName = "nsfw-emoji${{ matrix.platform.label }}" + $_.Extension
+            $newName = "nsfw-emoji-${{ matrix.platform.label }}" + $_.Extension
             Rename-Item $_.Name $newName
           }
 
@@ -100,16 +100,16 @@ jobs:
             if [ -f "$file" ]; then
               # 移除 lib 前缀
               base_name="${file#lib}"
-              new_name="nsfw-emoji${{ matrix.platform.label }}.${file##*.}"
+              new_name="nsfw-emoji-${{ matrix.platform.label }}.${file##*.}"
               mv "$file" "$new_name"
             fi
           done
 
       - uses: actions/upload-artifact@v4
         with:
-          name: "nsfw-emoji${{ matrix.platform.label }}"
+          name: "nsfw-emoji-${{ matrix.platform.label }}"
           path: |
-            target/${{ matrix.platform.target }}/release/nsfw-emoji${{ matrix.platform.label }}.*
+            target/${{ matrix.platform.target }}/release/nsfw-emoji-${{ matrix.platform.label }}.*
 
   build_linux:
     runs-on: ${{ matrix.platform.runner }}
@@ -147,16 +147,16 @@ jobs:
             if [ -f "$file" ]; then
               # 移除 lib 前缀
               base_name="${file#lib}"
-              new_name="nsfw-emoji${{ matrix.platform.label }}.${file##*.}"
+              new_name="nsfw-emoji-${{ matrix.platform.label }}.${file##*.}"
               mv "$file" "$new_name"
             fi
           done
 
       - uses: actions/upload-artifact@v4
         with:
-          name: "nsfw-emoji${{ matrix.platform.label }}"
+          name: "nsfw-emoji-${{ matrix.platform.label }}"
           path: |
-            target/${{ matrix.platform.target }}/release/nsfw-emoji${{ matrix.platform.label }}.*
+            target/${{ matrix.platform.target }}/release/nsfw-emoji-${{ matrix.platform.label }}.*
 
   release:
     name: Create Release
