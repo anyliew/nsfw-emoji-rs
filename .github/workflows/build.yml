@@ -185,8 +185,8 @@ jobs:
           prerelease: false
           generate_release_notes: true
           files: |
-            artifacts/**/nsfw-emojiwindows-x86_64.*
-            artifacts/**/nsfw-emojimacos-x86_64.*
-            artifacts/**/nsfw-emojimacos-aarch64.*
-            artifacts/**/nsfw-emojilinux-x86_64.*
-            artifacts/**/nsfw-emojilinux-aarch64.*
+            artifacts/**/nsfw-emoji-windows-x86_64.*
+            artifacts/**/nsfw-emoji-macos-x86_64.*
+            artifacts/**/nsfw-emoji-macos-aarch64.*
+            artifacts/**/nsfw-emoji-linux-x86_64.*
+            artifacts/**/nsfw-emoji-linux-aarch64.*
