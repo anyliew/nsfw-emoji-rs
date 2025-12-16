@@ -1,6 +1,6 @@
 [package]
 name = "nsfw-emoji"
-description = "nsfw-emoji-rs"
+description = "nsfw-emoji"
 version = "0.0.5"
 authors = ["Anyliew <anyliew@outlook.com>"]
 license = "MIT"
